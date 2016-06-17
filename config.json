@@ -1,0 +1,45 @@
+{
+	"development": {		
+		"timeout":45000,
+		"captureResponseTime":true,
+		"email_to": ["email 1","email 2"],
+		"apis" : [
+			{
+				"host": "<Name of host where RESTful API is deployed>",
+				"url":"<Fully qualified RESTFul API URL to be monitored>",
+				"http_method":"POST",
+			    "http_headers": {
+				    "content-type": "application/json",
+				    "Accept":"*/*"
+			  	},				
+			  	"http_post_put_body":"/../postsamples/sample_post_body.json"    	  
+			},
+			{
+				"host": "<Name of host where RESTful API is deployed>",
+				"url":"<Fully qualified RESTFul API URL to be monitored>",
+				"http_method":"GET",
+			    "http_headers": {	    
+				    "Content-Type": "application/json"
+			  	}				
+			}					
+		]
+	},
+	"qa": {			
+		"timeout":45000,
+		"captureResponseTime":false,
+		"email_to": ["email 1","email 2"],
+		"apis" : []
+	},
+	"stage": {			
+		"timeout":20000,
+		"captureResponseTime":true,
+		"email_to": ["email 1","email 2"],
+		"apis" : []
+	},
+	"production": {		
+		"timeout":20000,
+		"captureResponseTime":true,
+		"email_to": ["email 1","email 2"],
+		"apis" : []
+	}	
+}

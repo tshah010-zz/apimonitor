@@ -1,0 +1,17 @@
+{
+  "name": "apimonitor",
+  "license" : "MIT License",  
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "async": "^1.5.0",
+    "express": "^3.2.6",
+    "fs": "0.0.2",
+    "jade": "^1.11.0",
+    "nodemailer": "^1.8.0",
+    "request": "^2.65.0"
+  }
+}

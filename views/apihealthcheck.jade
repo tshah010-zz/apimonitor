@@ -1,0 +1,27 @@
+doctype html
+html
+	head
+		title #{title}
+		style
+			body(style="font-family: Verdana; font-size: 13px; background: #eee;")
+			h1(style="font-family: Verdana; font-size: 22px; color: #464646;")
+			a(style="color: #C2575B; text-decoration: none;")
+	body
+		h1(style="font-family: Verdana; font-size: 22px; background: #eee;") #{title} in #{environment}
+		div
+			table(style="font-family: Verdana; font-size: 14px;text-align:center;border-collapse:collapse;margin:20px;")
+				thead(style="font-size:13px;font-weight:normal;background:#b9c9fe;border-top:4px solid #aabcfe;border-bottom:1px solid #fff;color:#039;padding:8px;")
+					tr
+						th(scope="col")  URL
+						th(scope="col")  Status
+						th(scope="col")  Response Time (ms)
+						th(scope="col")  HTTP Response Code
+						th(scope="col")  Response
+				tbody
+					each result, i in results 
+						tr
+							td(style="text-align:left;background:#e8edff;border-bottom:1px solid #fff;color:#669;border-top:1px solid transparent;padding:8px;") !{result.method} !{result.url}
+							td(style="text-align:center;background:#e8edff;border-bottom:1px solid #fff;color:#669;border-top:1px solid transparent;padding:8px;")  #{result.api_call_status}
+							td(style="text-align:center;background:#e8edff;border-bottom:1px solid #fff;color:#669;border-top:1px solid transparent;padding:8px;")  #{result.response_time}
+							td(style="text-align:center;background:#e8edff;border-bottom:1px solid #fff;color:#669;border-top:1px solid transparent;padding:8px;")  #{result.response_status_code}
+							td(style="text-align:left;background:#e8edff;border-bottom:1px solid #fff;color:#669;border-top:1px solid transparent;padding:8px;")  !{result.error_msg}
